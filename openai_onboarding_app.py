@@ -706,6 +706,6 @@ with tabs[4]:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #64748b; padding: 20px;'>
-    <p style='font-style: italic;'>For questions or further details, email <a href=”mailto:jessi@jessijaramillo.com”>jessi@jessijaramillo.com</a>.</p>
+    <p style='font-style: italic;'>Want to learn more? Email <a href=”mailto:jessi@jessijaramillo.com” target="_blank">jessi@jessijaramillo.com</a>.</p>
 </div>
 """, unsafe_allow_html=True)
