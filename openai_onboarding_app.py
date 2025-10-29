@@ -253,12 +253,8 @@ with tabs[1]:
     st.markdown("---")
 
     st.subheader("Select a playbook")
-    st.markdown("""
-        <p style='margin: 0; line-height: 1.6; font-size: 16px; padding: 10px 0;'>
-                "**Select a playbook to explore detailed behavioral triggers for each segment.**"</p>
-        """, unsafe_allow_html=True)
             
-    playbook_selection = st.selectbox("Select a playbook",
+    playbook_selection = st.selectbox("**Select a playbook to explore detailed behavioral triggers for each segment.**",
         ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
     )
     
