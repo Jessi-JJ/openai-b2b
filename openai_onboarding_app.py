@@ -66,21 +66,6 @@ st.markdown("""
         margin-top: 0;
         font-size: 18px;
     }
-    .flow-box {
-        background: white;
-        border: 2px solid #4f46e5;
-        border-radius: 8px;
-        padding: 15px;
-        margin: 10px 0;
-        text-align: center;
-        font-weight: 600;
-    }
-    .arrow {
-        text-align: center;
-        font-size: 24px;
-        color: #4f46e5;
-        margin: 10px 0;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -497,63 +482,68 @@ with tabs[2]:
 
     journey_example = {
     "persona": "Developer at Acme Corp",
-    "initial_action": "Makes 10th API call",
-    "steps": [
-        {
+    "initial_action": "Makes 10th API call"}
+
+    steps = [
+        {   "id": "1",
             "stage": "Event Captured",
+            "color": "#3b82f6",
             "description": "User makes 10th API call (tracked via Segment)",
-            "icon": "📊"
         },
-        {
-            "stage": "System Checks",
-            "description": "✅ Completed API onboarding\n❌ No production integration\n📋 Enterprise tier, 30 days old",
-            "icon": "🧠"
+        {   "id": "2",
+            "stage": "Audience Checks",
+            "color": "#3b82f6",
+            "description": "✅ Completed API onboarding\n❌ No production integration\n📋 Enterprise tier, 30 days old"
         },
-        {
+        {   "id": "3",
             "stage": "Decision Trigger",
-            "description": "Activate 'Advanced API Setup' journey",
-            "icon": "⚖️"
+            "color": "#3b82f6",
+            "description": "Activate 'Advanced API Setup' journey"
         },
-        {
+        {   "id": "4",
             "stage": "Multi-Channel Delivery",
-            "description": "• Email: 'Ready for production?' (T+0)\n• In-app: Production best practices link (T+0)\n• Slack: #engineering channel message (T+24hrs if no action)",
-            "icon": "📨"
+            "color": "#3b82f6",
+            "description": "• Email: 'Ready for production?' (T+0)\n• In-app: Production best practices link (T+0)\n• Slack: #engineering channel message (T+24hrs if no action)"
         },
-        {
+        {   "id": "5",
             "stage": "User Response",
-            "description": "User clicks through and sets up production integration",
-            "icon": "✅"
+            "color": "#3b82f6",
+            "description": "User clicks through and sets up production integration"
         },
-        {
+        {   "id": "6",
             "stage": "Profile Update",
-            "description": "Mark user as 'Production-ready' in CRM",
-            "icon": "💾"
+            "color": "#3b82f6",
+            "description": "Mark user as 'Production-ready' in CRM"
         },
-        {
+        {   "id": "7",
             "stage": "Next Trigger",
-            "description": "Schedule: Invite to API beta program (T+7 days)",
-            "icon": "🔁"
+            "color": "#3b82f6",
+            "description": "🔁 Schedule: Invite to API beta program (T+7 days)"
         }
     ]
-}
+
 
     # Display journey
     st.markdown(f"**Example Persona:** {journey_example['persona']}")
     st.markdown(f"**Initial Action:** {journey_example['initial_action']}")
     st.markdown("")
 
-    for step in journey_example['steps']:
-        st.markdown(f"""
-        <div class='flow-box'>
-        <span style='font-size: 24px; margin-right: 10px;'>{step['icon']}</span>
-        <strong>{step['stage']}</strong>
-        <div style='font-size: 14px; margin-top: 8px; white-space: pre-line;'>{step['description']}</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    if step != journey_example['steps'][-1]:
-        st.markdown("<div class='arrow'>↓</div>", unsafe_allow_html=True)
-    
+   
+    for i, step in enumerate(steps):
+        with st.expander(f"**Stage {step['id']}: {step['stage']}**", expanded=(i==0)):
+            st.markdown(f"""
+            <div style='background: {step['color']}15; padding: 20px; 
+                        border-radius: 8px; border-left: 5px solid {step['color']};'>
+                <p style='font-size: 16px; margin-bottom: 15px;'>{step['description']}</p>
+                <h4 style='color: {step['color']}; margin-bottom: 10px;'>Key Capabilities:</h4>
+            </div>
+            """, unsafe_allow_html=True)
+            
+       
+        if i < len(steps) - 1:
+            st.markdown("<div style='text-align: center; font-size: 32px; color: #3b82f6;'>⬇️</div>", 
+                       unsafe_allow_html=True)
+
 
 # ========== METRICS TAB ==========
 with tabs[3]:
