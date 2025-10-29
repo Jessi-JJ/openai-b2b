@@ -241,9 +241,9 @@ with tabs[1]:
     # Display timeline
     cols = st.columns(3)
     for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
-    with cols[idx]:
-        st.markdown(f"""
-        <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
+        with cols[idx]:
+            st.markdown(f"""
+            <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
                     color: white; padding: 25px; border-radius: 12px; min-height: 350px;'>
             <h3 style='margin-top: 0; font-size: 16px; opacity: 0.9;'>{horizon['timeframe']}</h3>
             <h2 style='margin: 10px 0; font-size: 22px;'>{horizon['title']}</h2>
