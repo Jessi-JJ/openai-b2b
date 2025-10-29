@@ -68,7 +68,7 @@ tabs = st.tabs(["Overview", "Architecture", "Playbooks", "Metrics", "Roadmap"])
 
 # ========== OVERVIEW TAB ==========
 with tabs[0]:
-    st.header("Overview")
+    st.header("Summary")
 
     st.markdown("""
     <div style='background: #F3F4F6; 
@@ -81,21 +81,6 @@ with tabs[0]:
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("---")
-       
-    st.subheader("🎯 Key Objectives")
-    
-    objectives = [
-        "Streamline enterprise customer onboarding with automated workflows",
-        "Create unified customer data architecture across sales, product, and success teams",
-        "Enable personalized engagement at scale using AI-powered enrichment",
-        "Implement data-driven lifecycle messaging to increase product adoption"
-    ]
-    
-    for obj in objectives:
-        st.markdown(f"✅ {obj}")
-    
-    
     col1, col2 = st.columns(2)
     
     with col1:
@@ -118,12 +103,32 @@ with tabs[0]:
         <div style='background: #1F2937; 
                     padding: 30px; border-radius: 4px; color: white; text-align: center;
                     border: 2px solid #374151;'>
-            <h3 style='margin: 0; color: white; font-weight: 600;'>Increase Adoption</h3>
-            <h1 style='font-size: 64px; margin: 10px 0; color: white; font-weight: 700;'>35%</h1>
-            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Product usage improvement</p>
+            <h3 style='margin: 0; color: white; font-weight: 600;'>The Opportunity</h3>
+            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Differentiate lifecycle journeys that meet customers where they are, guide them to value faster, and expand usage.
+                    <ul>
+                    <li>Time to first value: Get users to their "aha moment" as fast as possible</li>
+                    <li>Habit formation & expansion:  Drive daily/weekly active usage and expand use cases within the account</li>
+                    <li>Retention & advocacy: Make ChatGPT indispensable, drive expansion revenue and referrals</li>
+            </p>
+                    
         </div>
         """, unsafe_allow_html=True)
 
+       
+    st.subheader("🎯 Key Objectives")
+    
+    objectives = [
+        "Streamline enterprise customer onboarding with automated workflows",
+        "Create unified customer data architecture across sales, product, and success teams",
+        "Enable personalized engagement at scale using AI-powered enrichment",
+        "Implement data-driven lifecycle messaging to increase product adoption"
+    ]
+    
+    for obj in objectives:
+        st.markdown(f"✅ {obj}")
+    
+    
+    
     
     st.markdown("---")
     
