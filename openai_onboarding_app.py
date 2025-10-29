@@ -250,10 +250,10 @@ with tabs[1]:
             <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>ROI: ⭐⭐⭐⭐⭐ (5/5)<br>Directly drives expansion revenue, highest revenue impact</p>
         </div>
         """, unsafe_allow_html=True)
-        st.markdown("---")
+    st.markdown("---")
 
-        st.subheader("Select a playbook")
-        st.markdown("""
+    st.subheader("Select a playbook")
+    st.markdown("""
         <p style='margin: 0; line-height: 1.6; font-size: 16px; padding: 10px 0;'>
                 "**Select a playbook to explore detailed behavioral triggers:**"</p>
         """, unsafe_allow_html=True)
