@@ -493,7 +493,7 @@ with tabs[2]:
         {   "id": "2",
             "stage": "Audience Checks",
             "color": "#3b82f6",
-            "description": "✅ Completed API onboarding\n❌ No production integration\n📋 Enterprise tier, 30 days old"
+            "description": "✅ Completed API onboarding<br>❌ No production integration<br>📋 Enterprise tier, 30 days old"
         },
         {   "id": "3",
             "stage": "Decision Trigger",
@@ -503,7 +503,7 @@ with tabs[2]:
         {   "id": "4",
             "stage": "Multi-Channel Delivery",
             "color": "#3b82f6",
-            "description": "• Email: 'Ready for production?' (T+0)\n• In-app: Production best practices link (T+0)\n• Slack: #engineering channel message (T+24hrs if no action)"
+            "description": "• Email: 'Ready for production?' (T+0)<br>• In-app: Production best practices link (T+0)<br>• Slack: #engineering channel message (T+24hrs if no action)"
         },
         {   "id": "5",
             "stage": "User Response",
@@ -533,9 +533,8 @@ with tabs[2]:
         with st.expander(f"**Stage {step['id']}: {step['stage']}**", expanded=(i==0)):
             st.markdown(f"""
             <div style='background: {step['color']}15; padding: 20px; 
-                        border-radius: 8px; border-left: 5px solid {step['color']};'>
+                        border-radius: 8px; border-left: 2px solid {step['color']};'>
                 <p style='font-size: 16px; margin-bottom: 15px;'>{step['description']}</p>
-                <h4 style='color: {step['color']}; margin-bottom: 10px;'>Key Capabilities:</h4>
             </div>
             """, unsafe_allow_html=True)
             
