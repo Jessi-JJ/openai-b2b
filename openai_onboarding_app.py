@@ -254,7 +254,7 @@ with tabs[1]:
 
     st.subheader("Select a playbook")
             
-    playbook_selection = st.selectbox("**Select a playbook to explore detailed behavioral triggers for each segment.**",
+    playbook_selection = st.selectbox("**Select from the dropdown below to explore detailed behavioral triggers for each segment.**",
         ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
     )
     
@@ -683,66 +683,50 @@ with tabs[4]:
     
     roadmap = [
         {
-            "quarter": "Q1 2026",
-            "focus": "Foundation & Core Integrations",
+            "days": "Day 1-30",
+            "focus": "Discovery & Foundation",
             "progress": 0,
             "deliverables": [
-                "Hightouch Reverse ETL setup",
-                "Amplitude product analytics implementation",
-                "Salesforce sync configuration"
+                "Data flow diagram - Document actual flow from event capture → activation",
+                "Integration health report - Test each connection, document API limits, error rates",
+                "Campaign inventory - Document all active automations across all platforms", 
+                "Quick wins list - Low-effort, high-impact improvements to tackle in Days 30-60"
             ],
-            "dependencies": [
-                "Data engineering team",
-                "Salesforce admin access",
-                "Warehouse access permissions"
+            "actions": [
+                "Key discovery meetings with Sales Ops, Growth, Engineering, Data, Product stakeholders",
+                "Validate Assumptions about messaging platforms, customer database, integrations",
+                "Identify urgent pain points"
             ]
         },
         {
-            "quarter": "Q2 2026",
-            "focus": "Behavioral Automation & Segmentation",
+            "days": "Days 31-60",
+            "focus": "Automation & Segmentation",
             "progress": 0,
             "deliverables": [
-                "Amplitude cohort models",
-                "Automated email sequences via Hightouch",
-                "Clay enrichment workflows",
-                "Onboarding dashboard"
-            ],
-            "dependencies": [
-                "Marketing ops team",
-                "Product analytics data models",
-                "Email platform configuration"
-            ]
-        },
-        {
-            "quarter": "Q3 2026",
-            "focus": "Advanced Personalization Playbooks",
-            "progress": 0,
-            "deliverables": [
-                "Developer-led growth playbook (Amplitude-triggered)",
-                "Executive sponsorship playbook",
-                "Usage-based health scoring",
+                "Platform strategy recommendations",
+                "Opitimize 3 campaigns",
+                "Data governance framework",
                 "Real-time personalization engine"
             ],
-            "dependencies": [
-                "Customer success input",
-                "Amplitude behavioral models",
-                "Hightouch sync templates"
+            "actions": [
+                "Create platform comparison matrix and scorecard",
+                "Audit Clay enrichment, trigger events, data quality rules, segment use cases",
+                "Pilot AI-generated subject line testing"
             ]
         },
         {
-            "quarter": "Q4 2026",
-            "focus": "AI-Powered Optimization & Scale",
+            "days": "Days 61-90",
+            "focus": "Strategic Initiatives & Scale",
             "progress": 0,
             "deliverables": [
-                "AI-powered next-best-action",
-                "Predictive churn models (Amplitude + Databricks)",
-                "Expansion recommendation engine",
-                "Multi-team orchestration"
+                "Unified customer journey orchestration",
+                "Predictive lead scoring",
+                "Experimentation framework"
             ],
-            "dependencies": [
-                "ML engineering support",
-                "Historical usage data",
-                "Hightouch AI Decisioning"
+            "actions": [
+                "Build journey maps and create cross-channel suppression logic",
+                "Combine Salesforce data + Clay enrichment to develop ideal customer scores"
+                "Formalize experimentation management and create experimentation calendar"
             ]
         }
     ]
@@ -753,7 +737,7 @@ with tabs[4]:
                     margin: 20px 0; border: 2px solid #E5E5E5;
                     border-left: 4px solid #1F2937;'>
             <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;'>
-                <h3 style='margin: 0; color: #1F2937; font-weight: 600;'>{phase['quarter']}</h3>
+                <h3 style='margin: 0; color: #1F2937; font-weight: 600;'>{phase['days']}</h3>
                 <span style='background: #1F2937; color: white; padding: 8px 16px; 
                             border-radius: 2px; font-weight: 600;'>{phase['focus']}</span>
             </div>
@@ -763,14 +747,14 @@ with tabs[4]:
         col1, col2 = st.columns(2)
         
         with col1:
+            st.markdown("**👉 Action items:**")
+            for actions in phase['actions']:
+                st.markdown(f"→ {actions}")
+        
+        with col2:
             st.markdown("**📦 Deliverables:**")
             for deliverable in phase['deliverables']:
                 st.markdown(f"✓ {deliverable}")
-        
-        with col2:
-            st.markdown("**🔗 Dependencies:**")
-            for dependency in phase['dependencies']:
-                st.markdown(f"→ {dependency}")
         
         st.progress(phase['progress'] / 100)
     
