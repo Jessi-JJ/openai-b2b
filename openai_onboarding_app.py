@@ -101,11 +101,15 @@ with tabs[0]:
     with col1:
         st.markdown("""
         <div style='background: #1F2937; 
-                    padding: 30px; border-radius: 4px; color: white; text-align: center;
+                    padding: 30px; border-radius: 4px; color: white; text-align: left;
                     border: 2px solid #374151;'>
-            <h3 style='margin: 0; color: white; font-weight: 600;'>Reduce Time-to-Value</h3>
-            <h1 style='font-size: 64px; margin: 10px 0; color: white; font-weight: 700;'>30%</h1>
-            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Faster onboarding to production</p>
+            <h3 style='margin: 0; color: white; font-weight: 600;'>The Challenge</h3>
+            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>ChatGPT Enterprise/Team customers have different:
+                    <ul>
+                    <li>Entry points (developer-led trial vs. top-down executive purchase)</li>
+                    <li>Use cases (coding, research, customer support, content creation, analysis)</li>
+                    <li>Organizational maturity (AI-native startups vs. traditional enterprises)</li>
+                    <li>Activation points (first API call, team invite, workspace setup, model switching)</li></p>
         </div>
         """, unsafe_allow_html=True)
     
@@ -129,17 +133,16 @@ with tabs[0]:
         st.markdown("""
        <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>🗄️ Tech Stack</h3>
+            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>🗄️ Tech Stack Assumptions</h3>
         
         <div style='line-height: 1.8; color: #1F2937;'>
             <ul>
-            <li>CRM: Salesforce</li>
-            <li>Product Analytics: Amplitude</li>
-            <li>Reverse ETL: Hightouch</li>
-            <li>Enrichment: Clay (Claygent)</li>
-            <li>Trigger Events: Segment, Google Analytics</li>
-            <li>Storage: PostgreSQL, S3, Databricks</li>
-            <li>Messaging: SendGrid, Braze, Iterable, Customer.io</li>
+            <li>CRM: Salesforce with custom objects for usage data, health scores, account hierarchy</li>
+            <li>Data warehouse: Events, product telemetry, user behavior already streaming in real-time</li>
+            <li>Enrichment: Clay or similar for account intelligence, intent signals, persona mapping</li>
+            <li>Messaging platforms: Email (SendGrid/Braze), in-app (custom), push or SMS capability</li>
+            <li>Analytics: Segment, product analytics, cohort analysis tools operational</li>
+            <li>Integration layer: APIs connecting ChatGPT usage data → CRM → messaging platforms</li>
             </ul>        
              
        </div>""", unsafe_allow_html=True)
@@ -148,7 +151,7 @@ with tabs[0]:
         st.markdown("""
         <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>✨ Enhanced Capabilities</h3>
+            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>✨ Enhanced Capabilities Assumed</h3>
             <p style='margin: 0; color: #1F2937; font-weight: 500; padding: 20px 0'>
                  Amplitude tracks every action, Hightouch activates campaigns instantly, and Clay enriches with firmographic data.</p>
     
@@ -158,7 +161,6 @@ with tabs[0]:
             ✓ Real-time data activation (Hightouch Reverse ETL)<br>
             ✓ AI-driven behavioral personalization<br>
             ✓ Triggered by real-time events and usage<br>
-                    <br>
         </div>
         
         </div>""", unsafe_allow_html=True)
@@ -279,6 +281,9 @@ with tabs[2]:
     st.markdown("""
      <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
             only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
+           </p>
+            <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> 
+                Three personas 
            </p>
     """, unsafe_allow_html=True)
             
