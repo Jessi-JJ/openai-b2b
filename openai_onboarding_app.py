@@ -46,6 +46,41 @@ st.markdown("""
         background: #FFFFFF;
         border: 1px solid #E5E5E5;
     }
+     .timeline-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin: 20px 0;
+    }
+    .horizon-box {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 10px;
+        text-align: center;
+        min-height: 150px;
+    }
+    .horizon-box h3 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+    .flow-box {
+        background: white;
+        border: 2px solid #4f46e5;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        text-align: center;
+        font-weight: 600;
+    }
+    .arrow {
+        text-align: center;
+        font-size: 24px;
+        color: #4f46e5;
+        margin: 10px 0;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -104,7 +139,7 @@ with tabs[0]:
                     padding: 30px; border-radius: 4px; color: white; text-align: left;
                     border: 2px solid #374151;'>
             <h3 style='margin: 0; color: white; font-weight: 600;'>🦋 The Opportunity</h3>
-            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Differentiate lifecycle journeys that meet customers where they are, guide them to value faster, and expand usage.
+            <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Differentiate lifecycle journeys that focus on:
                     <ul>
                     <li>Time to first value: Get users to their "aha moment" as fast as possible</li>
                     <li>Habit formation & expansion:  Drive daily/weekly active usage and expand use cases within the account</li>
@@ -172,113 +207,61 @@ with tabs[0]:
 
 # ========== ARCHITECTURE TAB ==========
 with tabs[1]:
-    st.header("Interactive Data Architecture")
-    st.markdown("**Click each stage below to explore the data flow in detail**")
-    
-    stages = [
-        {
-            "id": "1",
-            "title": "Event Capture",
-            "tools": "Segment + Google Tag Manager",
-            "description": "Customer interactions across web properties, API usage, and product events are captured in real-time.",
-            "details": [
-                "Page views & click tracking",
-                "API call monitoring",
-                "Feature usage events",
-                "Conversion tracking"
-            ]
-        },
-        {
-            "id": "2",
-            "title": "Data Processing & Storage",
-            "tools": "Kafka → PostgreSQL | S3 | Databricks",
-            "description": "Events flow through stream processing, then land in storage and analytical layers.",
-            "details": [
-                "Real-time stream processing",
-                "Structured data storage",
-                "Long-term data archival",
-                "ML & analytics pipelines"
-            ]
-        },
-        {
-            "id": "3",
-            "title": "Product Analytics",
-            "tools": "Amplitude",
-            "description": "Deep product usage analysis and behavioral cohort creation for B2B segmentation.",
-            "details": [
-                "API usage pattern analysis",
-                "Team-level adoption tracking",
-                "Feature engagement metrics",
-                "Predictive churn indicators"
-            ]
-        },
-        {
-            "id": "4",
-            "title": "Data Enrichment",
-            "tools": "Clay (Claygent)",
-            "description": "AI-powered enrichment adds firmographic data, technographic signals, and competitive intelligence.",
-            "details": [
-                "Company size & industry data",
-                "Technology stack analysis",
-                "Hiring pattern signals",
-                "Decision maker identification"
-            ]
-        },
-        {
-            "id": "5",
-            "title": "Reverse ETL & Activation",
-            "tools": "Hightouch",
-            "description": "Syncs enriched warehouse data to operational tools, turning insights into action across all platforms.",
-            "details": [
-                "Warehouse → CRM sync",
-                "Behavioral segments distribution",
-                "Health scores propagation",
-                "Real-time data activation"
-            ]
-        },
-        {
-            "id": "6",
-            "title": "CRM & Sales Enablement",
-            "tools": "Salesforce",
-            "description": "Unified customer view with product usage data enables data-driven account prioritization and health monitoring.",
-            "details": [
-                "360° customer profiles",
-                "Usage-driven health scores",
-                "Expansion opportunity detection",
-                "Account prioritization"
-            ]
-        },
-        {
-            "id": "7",
-            "title": "Lifecycle Messaging",
-            "tools": "SendGrid | Braze | Iterable",
-            "description": "Personalized messaging activates based on product usage, behavioral triggers, and predictive models.",
-            "details": [
-                "Usage-triggered campaigns",
-                "Behavioral automation",
-                "Milestone celebrations",
-                "Predictive engagement"
-            ]
-        }
-    ]
-    
-    for i, stage in enumerate(stages):
-        with st.expander(f"**Stage {stage['id']}: {stage['title']}** - {stage['tools']}", expanded=(i==0)):
-            st.markdown(f"""
-          
-                <p style='font-size: 16px; margin-bottom: 15px;'>{stage['description']}</p>
-                <p style='font-size: 16px; margin-bottom: 10px;'>🔑 Key Capabilities:</p>
-        
-            """, unsafe_allow_html=True)
-            
-            cols = st.columns(2)
-            for idx, detail in enumerate(stage['details']):
-                with cols[idx % 2]:
-                    st.markdown(f"✓ {detail}")
-        
-        if i < len(stages) - 1:
-            st.markdown("<div style='text-align: center; font-size: 32px; color: #3b82f6;'>⬇️</div>", 
-                       unsafe_allow_html=True)
+    st.header("Lifecycle Architecture")
+
+st.header("1️⃣ The Timeline")
+
+horizons_data = {
+    "Horizon 1": {
+        "title": "TIME TO FIRST VALUE",
+        "timeframe": "Days 1-14",
+        "goal": "Get users to their 'aha moment' within 2 weeks",
+        "channels": ["Email welcome series", "In-app onboarding", "Admin dashboard", "ChatGPT Canvas"],
+        "key_metric": "Time to first value: <7 days",
+        "color": "#667eea"
+    },
+    "Horizon 2": {
+        "title": "HABIT FORMATION & EXPANSION",
+        "timeframe": "Weeks 2-8",
+        "goal": "Drive 3+ days active per week and expand use cases",
+        "channels": ["Behavioral emails", "In-app personalization", "Slack/Teams integration", "Custom GPT recommendations"],
+        "key_metric": "Days active per week: 3+",
+        "color": "#764ba2"
+    },
+    "Horizon 3": {
+        "title": "RETENTION & ADVOCACY",
+        "timeframe": "Week 9+",
+        "goal": "Make ChatGPT indispensable; drive expansion and referrals",
+        "channels": ["Executive emails", "Community content", "Account insights", "Viral loops"],
+        "key_metric": "Logo retention: >95%",
+        "color": "#f59e0b"
+    }
+}
+
+# Display timeline
+cols = st.columns(3)
+for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
+    with cols[idx]:
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
+                    color: white; padding: 25px; border-radius: 12px; min-height: 350px;'>
+            <h3 style='margin-top: 0; font-size: 16px; opacity: 0.9;'>{horizon['timeframe']}</h3>
+            <h2 style='margin: 10px 0; font-size: 22px;'>{horizon['title']}</h2>
+            <p style='margin: 15px 0; font-size: 14px;'><strong>Goal:</strong> {horizon['goal']}</p>
+            <p style='margin: 10px 0; font-size: 14px;'><strong>Key Channels:</strong></p>
+            <ul style='font-size: 13px; line-height: 1.6;'>
+                {"".join([f"<li>{channel}</li>" for channel in horizon['channels']])}
+            </ul>
+            <p style='margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); 
+                      font-size: 13px; font-weight: bold;'>
+                📊 {horizon['key_metric']}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+st.markdown("---")
+
+ 
 
 # ========== PLAYBOOKS TAB ==========
 with tabs[2]:
