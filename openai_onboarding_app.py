@@ -160,7 +160,7 @@ with tabs[0]:
         st.markdown("""
        <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-size: 20p; font-weight: 600;'>🗄️ Tech Stack Assumptions</h4>
+            <h4 style='color: #000000; margin-top: 0; font-size: 18px; font-weight: 600;'>🗄️ Tech Stack Assumptions</h4>
         
         <div style='line-height: 1.6; color: #1F2937;'>
             <ul>
@@ -178,7 +178,7 @@ with tabs[0]:
         st.markdown("""
         <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-size: 20px; font-weight: 600;'>✨ Enhanced Capabilities Assumed</h4>
+            <h4 style='color: #000000; margin-top: 0; font-size: 18px; font-weight: 600;'>✨ Enhanced Capabilities Assumed</h4>
             <p style='margin: 0; color: #1F2937; font-weight: 500; padding: 20px 0'>
                  Amplitude tracks every action, Hightouch activates campaigns instantly, and Clay enriches with firmographic data.</p>
     
@@ -757,37 +757,6 @@ with tabs[4]:
                 st.markdown(f"✓ {deliverable}")
         
         st.progress(phase['progress'] / 100)
-    
-    st.markdown("---")
-    
-    st.markdown("""
-    <div style='background: #1F2937; padding: 30px; border-radius: 4px; margin-top: 20px;
-                border: 2px solid #1F2937;'>
-        <h2 style='color: white; margin-bottom: 20px; font-weight: 600;'>➡️ Next Steps</h2>
-        <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 15px;'>
-            <div style='background: white; padding: 20px; border-radius: 4px;
-                        border: 1px solid #E5E5E5;'>
-                <h4 style='color: #1F2937; margin-bottom: 10px; font-weight: 600;'>1. Stakeholder Alignment</h4>
-                <p style='color: #6B7280; margin: 0;'>Workshop with Sales, CS, Product, Engineering teams</p>
-            </div>
-            <div style='background: white; padding: 20px; border-radius: 4px;
-                        border: 1px solid #E5E5E5;'>
-                <h4 style='color: #1F2937; margin-bottom: 10px; font-weight: 600;'>2. Data Audit</h4>
-                <p style='color: #6B7280; margin: 0;'>Validate current integrations and identify dependencies</p>
-            </div>
-            <div style='background: white; padding: 20px; border-radius: 4px;
-                        border: 1px solid #E5E5E5;'>
-                <h4 style='color: #1F2937; margin-bottom: 10px; font-weight: 600;'>3. Pilot Program</h4>
-                <p style='color: #6B7280; margin: 0;'>Select 5-10 enterprise accounts for beta testing</p>
-            </div>
-            <div style='background: white; padding: 20px; border-radius: 4px;
-                        border: 1px solid #E5E5E5;'>
-                <h4 style='color: #1F2937; margin-bottom: 10px; font-weight: 600;'>4. Resource Planning</h4>
-                <p style='color: #6B7280; margin: 0;'>Align for Q1 2026 implementation</p>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
 
 # Footer
 st.markdown("---")
