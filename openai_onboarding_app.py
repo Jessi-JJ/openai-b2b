@@ -197,7 +197,7 @@ with tabs[1]:
     st.header("The Target Segments")
     col1, col2, col3 = st.columns(3)
     with col1:
-    st.markdown("""
+        st.markdown("""
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
@@ -208,7 +208,7 @@ with tabs[1]:
         </div>
         """, unsafe_allow_html=True)
     with col2:
-    st.markdown("""
+        st.markdown("""
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
@@ -218,7 +218,7 @@ with tabs[1]:
         </div>
         """, unsafe_allow_html=True)
     with col3:
-    st.markdown("""
+        st.markdown("""
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
