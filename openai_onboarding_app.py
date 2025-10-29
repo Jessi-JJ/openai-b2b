@@ -721,12 +721,12 @@ with tabs[4]:
             "deliverables": [
                 "Unified customer journey orchestration",
                 "Predictive lead scoring",
-                "Experimentation framework"
+                "Personalization & experimentation framework"
             ],
             "actions": [
                 "Build journey maps and create cross-channel suppression logic",
-                "Combine Salesforce data + Clay enrichment to develop ideal customer scores"
-                "Formalize experimentation management and create experimentation calendar"
+                "Combine Salesforce data + Clay enrichment to develop ideal customer scores",
+                "Formalize experimentation and AI personalization management"
             ]
         }
     ]
