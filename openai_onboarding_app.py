@@ -481,43 +481,36 @@ with tabs[2]:
     st.header("3️⃣ Example User Journey")
 
     journey_example = {
-    "persona": "Developer at Acme Corp",
+    "persona": "Developer at Any Corp",
     "initial_action": "Makes 10th API call"}
 
     steps = [
         {   "id": "1",
             "stage": "Event Captured",
-            "color": "#3b82f6",
             "description": "User makes 10th API call (tracked via Segment)",
         },
         {   "id": "2",
             "stage": "Audience Checks",
-            "color": "#3b82f6",
             "description": "✅ Completed API onboarding<br>❌ No production integration<br>📋 Enterprise tier, 30 days old"
         },
         {   "id": "3",
             "stage": "Decision Trigger",
-            "color": "#3b82f6",
             "description": "Activate 'Advanced API Setup' journey"
         },
         {   "id": "4",
             "stage": "Multi-Channel Delivery",
-            "color": "#3b82f6",
             "description": "• Email: 'Ready for production?' (T+0)<br>• In-app: Production best practices link (T+0)<br>• Slack: #engineering channel message (T+24hrs if no action)"
         },
         {   "id": "5",
             "stage": "User Response",
-            "color": "#3b82f6",
             "description": "User clicks through and sets up production integration"
         },
         {   "id": "6",
             "stage": "Profile Update",
-            "color": "#3b82f6",
             "description": "Mark user as 'Production-ready' in CRM"
         },
         {   "id": "7",
             "stage": "Next Trigger",
-            "color": "#3b82f6",
             "description": "🔁 Schedule: Invite to API beta program (T+7 days)"
         }
     ]
@@ -532,9 +525,8 @@ with tabs[2]:
     for i, step in enumerate(steps):
         with st.expander(f"**Stage {step['id']}: {step['stage']}**", expanded=(i==0)):
             st.markdown(f"""
-            <div style='background: {step['color']}15; padding: 20px; 
-                        border-radius: 8px; border-left: 2px solid {step['color']};'>
-                <p style='font-size: 16px; margin-bottom: 15px;'>{step['description']}</p>
+            <div style='padding: 20px;>
+                <p style='font-size: 16px; margin-bottom: 10px;'>{step['description']}</p>
             </div>
             """, unsafe_allow_html=True)
             
