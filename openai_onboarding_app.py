@@ -194,30 +194,45 @@ with tabs[0]:
 
 # ========== PLAYBOOKS TAB ==========
 with tabs[1]:
-    st.header("Segments")
+    st.header("The Three Target Segments")
     st.markdown("""
-     <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
-            only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
-           </p>
-            <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> 
-                Three personas 
-           </p>
-    """, unsafe_allow_html=True)
-            
-    playbook_selection = st.selectbox(
-        "Select a playbook to explore detailed behavioral triggers:",
-        ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
-    )
-    
-    if "Developer" in playbook_selection:
-        st.markdown("""
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
             <h2 style='color: white; margin: 0; font-weight: 600;'>💻 Developer-Led Growth (Behavior-Driven)</h2>
             <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: Technical buyers and development teams</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude behavioral triggers + Hightouch activation</p>
+            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>Behavior triggers: First API call, 10+ calls in 24 hours, 100+ calls milestone, production deployment<br>
+            ROI: ⭐⭐⭐⭐⭐ (5/5) - Clearest behavioral signals, fastest time to value</p>
         </div>
+        """, unsafe_allow_html=True)
+    st.markdown("""
+        <div style='background: #1F2937; 
+                    padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
+                    border: 2px solid #374151;'>
+            <h2 style='color: white; margin: 0; font-weight: 600;'>👔 Executive Sponsorship (Behavior-Driven)</h2>
+            <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: C-suite and VP-level decision makers</p>
+            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude account-level analytics + Clay enrichment</p>
+        </div>
+        """, unsafe_allow_html=True)
+    st.markdown("""
+        <div style='background: #1F2937; 
+                    padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
+                    border: 2px solid #374151;'>
+            <h2 style='color: white; margin: 0; font-weight: 600;'>🚀 Multi-Team Expansion (Behavior-Driven)</h2>
+            <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: Accounts with multiple departments or use cases</p>
+            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude usage patterns + Clay stakeholder mapping</p>
+        </div>
+        """, unsafe_allow_html=True)
+            
+    playbook_selection = st.selectbox(
+        "**Select a playbook to explore detailed behavioral triggers:**",
+        ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
+    )
+    
+    if "Developer" in playbook_selection:
+        st.markdown("""
+        <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
+            only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
         """, unsafe_allow_html=True)
         
         timeline_df = pd.DataFrame({
@@ -270,14 +285,10 @@ with tabs[1]:
             """, unsafe_allow_html=True)
     
     elif "Executive" in playbook_selection:
+
         st.markdown("""
-        <div style='background: #1F2937; 
-                    padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
-                    border: 2px solid #374151;'>
-            <h2 style='color: white; margin: 0; font-weight: 600;'>👔 Executive Sponsorship (Behavior-Driven)</h2>
-            <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: C-suite and VP-level decision makers</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude account-level analytics + Clay enrichment</p>
-        </div>
+        <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
+            only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
         """, unsafe_allow_html=True)
         
         timeline_df = pd.DataFrame({
@@ -332,14 +343,10 @@ with tabs[1]:
     
     else:  # Multi-Team Expansion
         st.markdown("""
-        <div style='background: #1F2937; 
-                    padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
-                    border: 2px solid #374151;'>
-            <h2 style='color: white; margin: 0; font-weight: 600;'>🚀 Multi-Team Expansion (Behavior-Driven)</h2>
-            <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: Accounts with multiple departments or use cases</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude usage patterns + Clay stakeholder mapping</p>
-        </div>
+        <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
+            only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
         """, unsafe_allow_html=True)
+        
         
         timeline_df = pd.DataFrame({
             "Behavior Trigger": [
