@@ -201,20 +201,35 @@ with tabs[1]:
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
-            <h2 style='color: white; margin: 0; font-weight: 600;'>💻 Developer-Led Growth (Behavior-Driven)</h2>
-            <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: Technical buyers and development teams</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>Behavior triggers: First API call, 10+ calls in 24 hours, 100+ calls milestone, production deployment<br>
-            ROI: ⭐⭐⭐⭐⭐ (5/5) - Clearest behavioral signals, fastest time to value</p>
-        </div>
+            <h2 style='color: white; margin: 0; font-size: 22px; font-weight: 600;'>💻 Developer-Led Growth</h2>
+            <p style='color: #D1D5DB; margin: 10px 0; font-weight: 400;'>Target: Technical buyers and development teams</p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>Behavior triggers:
+                    <ul style='line-height: 1.6;'>
+                    <li>First API call</li>
+                    <li>10+ calls in 24 hours</li>
+                    <li>100+ calls milestone</li>
+                    <li>production deployment</li>
+                    </ul>
+                    </p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>ROI: ⭐⭐⭐⭐ (4/5)<br>Clearest behavioral signals, fastest time to value</p>
+          </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown("""
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
-            <h2 style='color: white; margin: 0; font-weight: 600;'>👔 Executive Sponsorship (Behavior-Driven)</h2>
+            <h2 style='color: white; margin: 0; font-size: 22px; font-weight: 600;'>👔 Executive Sponsorship</h2>
             <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: C-suite and VP-level decision makers</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude account-level analytics + Clay enrichment</p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>Behavior triggers:
+                    <ul style='line-height: 1.6;'>
+                    <li>Team onboarded (5+ users)</li>
+                    <li>First production use</li>
+                    <li>30-day sustained usage</li>
+                    <li>Executive dashboard views</li>
+                    </ul>
+                    </p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>ROI: ⭐⭐⭐⭐ (4/5)<br>Critical for enterprise deals, enables executive engagement</p>
         </div>
         """, unsafe_allow_html=True)
     with col3:
@@ -222,9 +237,17 @@ with tabs[1]:
         <div style='background: #1F2937; 
                     padding: 25px; border-radius: 4px; color: white; margin-bottom: 20px;
                     border: 2px solid #374151;'>
-            <h2 style='color: white; margin: 0; font-weight: 600;'>🚀 Multi-Team Expansion (Behavior-Driven)</h2>
+            <h2 style='color: white; margin: 0; font-size: 22px; font-weight: 600;'>🚀 Multi-Team Expansion</h2>
             <p style='color: #D1D5DB; margin-top: 10px; font-weight: 400;'>Target: Accounts with multiple departments or use cases</p>
-            <p style='color: #9CA3AF; margin-top: 5px; font-size: 14px;'>⚡ Powered by Amplitude usage patterns + Clay stakeholder mapping</p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>Behavior triggers:
+                    <ul style='line-height: 1.6;'>
+                    <li>80% plan capacity</li>
+                    <li>Cross-department usage</li>
+                    <li>New teams added</li>
+                    <li>New stakeholder hires</li>
+                    </ul>
+                    </p>
+            <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>ROI: ⭐⭐⭐⭐⭐ (5/5)<br>Directly drives expansion revenue, highest revenue impact</p>
         </div>
         """, unsafe_allow_html=True)
             
