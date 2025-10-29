@@ -209,16 +209,16 @@ with tabs[0]:
 with tabs[1]:
     st.header("Lifecycle Architecture")
 
-st.header("1️⃣ The Timeline")
+    st.header("1️⃣ The Timeline")
 
-horizons_data = {
+    horizons_data = {
     "Horizon 1": {
         "title": "TIME TO FIRST VALUE",
         "timeframe": "Days 1-14",
         "goal": "Get users to their 'aha moment' within 2 weeks",
         "channels": ["Email welcome series", "In-app onboarding", "Admin dashboard", "ChatGPT Canvas"],
         "key_metric": "Time to first value: <7 days",
-        "color": "#667eea"
+        "color": "#1F2937"
     },
     "Horizon 2": {
         "title": "HABIT FORMATION & EXPANSION",
@@ -226,7 +226,7 @@ horizons_data = {
         "goal": "Drive 3+ days active per week and expand use cases",
         "channels": ["Behavioral emails", "In-app personalization", "Slack/Teams integration", "Custom GPT recommendations"],
         "key_metric": "Days active per week: 3+",
-        "color": "#764ba2"
+        "color": "#1F2937"
     },
     "Horizon 3": {
         "title": "RETENTION & ADVOCACY",
@@ -234,13 +234,13 @@ horizons_data = {
         "goal": "Make ChatGPT indispensable; drive expansion and referrals",
         "channels": ["Executive emails", "Community content", "Account insights", "Viral loops"],
         "key_metric": "Logo retention: >95%",
-        "color": "#f59e0b"
+        "color": "#1F2937"
     }
 }
 
-# Display timeline
-cols = st.columns(3)
-for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
+    # Display timeline
+    cols = st.columns(3)
+    for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
     with cols[idx]:
         st.markdown(f"""
         <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
@@ -259,9 +259,38 @@ for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
         </div>
         """, unsafe_allow_html=True)
 
-st.markdown("---")
+    st.markdown("---")
 
- 
+    st.header("2️⃣ Channel Priority Matrix")
+
+    channel_matrix_data = {
+    "By Customer Segment": pd.DataFrame({
+        "Segment": ["Developer-led", "Executive purchase", "Product teams", "Analysts/Researchers", "Creatives"],
+        "Primary Channel": ["In-app + Email", "Email + Admin dashboard", "In-app personalization", "Email tips", "In-app discovery"],
+        "Secondary Channel": ["Slack/Discord integration", "Executive briefings", "Email use case guides", "In-app data tools", "Community content"],
+        "Activation Focus": ["API first call", "Team rollout", "Custom GPT creation", "Advanced Analysis adoption", "DALL-E/Canvas usage"]
+    }),
+    "By Journey Stage": pd.DataFrame({
+        "Stage": ["Onboarding (0-14d)", "Activation (2-8w)", "Retention (9w+)"],
+        "Email": ["🔥 High", "Medium", "🔥 High"],
+        "In-App": ["🔥 High", "🔥 High", "Medium"],
+        "Atlas/Browser": ["Medium", "Medium", "Medium"],
+        "Slack/Integration": ["Low", "🔥 High", "🔥 High"],
+        "Admin Dashboard": ["🔥 High (admins)", "Medium", "🔥 High (admins)"]
+    })
+    }
+
+    # Interactive selector
+    matrix_type = st.radio("View by:", list(channel_matrix_data.keys()), horizontal=True)
+
+    # Display selected matrix
+    st.dataframe(
+    channel_matrix_data[matrix_type],
+    use_container_width=True,
+    hide_index=True
+    )
+
+    st.markdown("---")
 
 # ========== PLAYBOOKS TAB ==========
 with tabs[2]:
