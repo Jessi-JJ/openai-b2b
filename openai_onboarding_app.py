@@ -258,7 +258,7 @@ with tabs[1]:
                 "**Select a playbook to explore detailed behavioral triggers for each segment.**"</p>
         """, unsafe_allow_html=True)
             
-    playbook_selection = st.selectbox(
+    playbook_selection = st.selectbox("Select a playbook",
         ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
     )
     
