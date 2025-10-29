@@ -99,7 +99,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create tabs
-tabs = st.tabs(["Overview", "Architecture", "Playbooks", "Metrics", "Roadmap"])
+tabs = st.tabs(["Overview", "Playbooks", "Architecture", "Metrics", "Roadmap"])
 
 # ========== OVERVIEW TAB ==========
 with tabs[0]:
@@ -151,7 +151,7 @@ with tabs[0]:
 
     
     st.markdown("---")
-    
+
     st.subheader("🎯 Key Objectives")
     
     objectives = [
@@ -492,79 +492,68 @@ with tabs[2]:
     )
 
     st.markdown("---")
-
-    st.header("4️⃣ Data Flow Diagram")
-
-    data_flow_stages = [
-    {
-        "stage": "User Action in ChatGPT",
-        "description": "Message sent, feature used, file uploaded, GPT created",
-        "icon": "📱",
-        "color": "#3b82f6"
-    },
-    {
-        "stage": "Event Capture",
-        "description": "Segment, Google Tag Manager",
-        "icon": "📊",
-        "color": "#8b5cf6"
-    },
-    {
-        "stage": "Data Processing",
-        "description": "Kafka streaming → PostgreSQL warehouse",
-        "icon": "🔄",
-        "color": "#ec4899"
-    },
-    {
-        "stage": "Enrichment & Intelligence",
-        "description": "Clay enrichment + Salesforce CRM data",
-        "icon": "🧠",
-        "color": "#f59e0b"
-    },
-    {
-        "stage": "Decision Engine",
-        "description": "Braze/Iterable logic: Should we message now?",
-        "icon": "⚖️",
-        "color": "#10b981"
-    },
-    {
-        "stage": "Channel Delivery",
-        "description": "Email | In-app | Slack | Admin Dashboard",
-        "icon": "📨",
-        "color": "#6366f1"
-    },
-    {
-        "stage": "Measurement & Loop",
-        "description": "Track response → Update profile → Inform next action",
-        "icon": "📈",
-        "color": "#14b8a6"
-    }
-]
-
-    # Display flow diagram
-    for stage in data_flow_stages:
-        col1, col2 = st.columns([1, 3])
     
-        with col1:
-            st.markdown(f"""
-            <div style='background: {stage['color']}; color: white; padding: 15px; 
-                    border-radius: 8px; text-align: center; font-size: 32px;'>
-            {stage['icon']}
-            </div>
-            """, unsafe_allow_html=True)
-    
-        with col2:
-            st.markdown(f"""
-            <div style='background: white; padding: 20px; border-radius: 8px; 
-                    border-left: 4px solid {stage['color']}; box-shadow: 0 2px 4px rgba(0,0,0,0.1);'>
-            <strong style='font-size: 18px; color: {stage['color']};'>{stage['stage']}</strong>
-            <p style='margin: 8px 0 0 0; color: #666;'>{stage['description']}</p>
-            </div>
-            """, unsafe_allow_html=True)
-    
-        if stage != data_flow_stages[-1]:
-            st.markdown("<div style='text-align: center; font-size: 32px; color: #4f46e5; margin: 5px 0;'>↓</div>", unsafe_allow_html=True)
+    st.header("3️⃣ Example User Journey")
 
-st.markdown("---")
+    journey_example = {
+    "persona": "Developer at Acme Corp",
+    "initial_action": "Makes 10th API call",
+    "steps": [
+        {
+            "stage": "Event Captured",
+            "description": "User makes 10th API call (tracked via Segment)",
+            "icon": "📊"
+        },
+        {
+            "stage": "System Checks",
+            "description": "✅ Completed API onboarding\n❌ No production integration\n📋 Enterprise tier, 30 days old",
+            "icon": "🧠"
+        },
+        {
+            "stage": "Decision Trigger",
+            "description": "Activate 'Advanced API Setup' journey",
+            "icon": "⚖️"
+        },
+        {
+            "stage": "Multi-Channel Delivery",
+            "description": "• Email: 'Ready for production?' (T+0)\n• In-app: Production best practices link (T+0)\n• Slack: #engineering channel message (T+24hrs if no action)",
+            "icon": "📨"
+        },
+        {
+            "stage": "User Response",
+            "description": "User clicks through and sets up production integration",
+            "icon": "✅"
+        },
+        {
+            "stage": "Profile Update",
+            "description": "Mark user as 'Production-ready' in CRM",
+            "icon": "💾"
+        },
+        {
+            "stage": "Next Trigger",
+            "description": "Schedule: Invite to API beta program (T+7 days)",
+            "icon": "🔁"
+        }
+    ]
+}
+
+    # Display journey
+    st.markdown(f"**Example Persona:** {journey_example['persona']}")
+    st.markdown(f"**Initial Action:** {journey_example['initial_action']}")
+    st.markdown("")
+
+    for step in journey_example['steps']:
+        st.markdown(f"""
+        <div class='flow-box'>
+        <span style='font-size: 24px; margin-right: 10px;'>{step['icon']}</span>
+        <strong>{step['stage']}</strong>
+        <div style='font-size: 14px; margin-top: 8px; white-space: pre-line;'>{step['description']}</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    if step != journey_example['steps'][-1]:
+        st.markdown("<div class='arrow'>↓</div>", unsafe_allow_html=True)
+    
 
 # ========== METRICS TAB ==========
 with tabs[3]:
