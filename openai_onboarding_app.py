@@ -108,7 +108,7 @@ with tabs[0]:
         <div style='background: #1F2937; 
                     padding: 30px; border-radius: 4px; color: white; text-align: left;
                     border: 2px solid #374151;'>
-            <h3 style='margin: 0; color: white; font-weight: 600;'>🐛 The Challenge</h3>
+            <h3 style='margin: 0; color: white; font-weight: 600;'>💪 The Challenge</h3>
             <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>ChatGPT Enterprise/Team customers have different:
                     <ul>
                     <li>Entry points (developer-led trial vs. top-down executive purchase)</li>
@@ -123,7 +123,7 @@ with tabs[0]:
         <div style='background: #1F2937; 
                     padding: 30px; border-radius: 4px; color: white; text-align: left;
                     border: 2px solid #374151;'>
-            <h3 style='margin: 0; color: white; font-weight: 600;'>🦋 The Opportunity</h3>
+            <h3 style='margin: 0; color: white; font-weight: 600;'>🏆 The Opportunity</h3>
             <p style='margin: 0; color: #D1D5DB; font-weight: 400;'>Differentiate lifecycle journeys that focus on:
                     <ul>
                     <li>Time to first value: Get users to their "aha moment" as fast as possible</li>
@@ -160,7 +160,7 @@ with tabs[0]:
         st.markdown("""
        <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>🗄️ Tech Stack Assumptions</h4>
+            <h4 style='color: #000000; margin-top: 0; font-size: 20p; font-weight: 600;'>🗄️ Tech Stack Assumptions</h4>
         
         <div style='line-height: 1.6; color: #1F2937;'>
             <ul>
@@ -178,7 +178,7 @@ with tabs[0]:
         st.markdown("""
         <div style='background: #F3F4F6; padding: 20px; border-radius: 4px; border-left: 3px solid #000000;
                     border: 1px solid #E5E5E5;'>
-            <h4 style='color: #000000; margin-top: 0; font-weight: 600;'>✨ Enhanced Capabilities Assumed</h4>
+            <h4 style='color: #000000; margin-top: 0; font-size: 20px; font-weight: 600;'>✨ Enhanced Capabilities Assumed</h4>
             <p style='margin: 0; color: #1F2937; font-weight: 500; padding: 20px 0'>
                  Amplitude tracks every action, Hightouch activates campaigns instantly, and Clay enriches with firmographic data.</p>
     
@@ -250,9 +250,15 @@ with tabs[1]:
             <p style='color: #9CA3AF; margin: 5px; font-size: 14px;'>ROI: ⭐⭐⭐⭐⭐ (5/5)<br>Directly drives expansion revenue, highest revenue impact</p>
         </div>
         """, unsafe_allow_html=True)
+        st.markdown("---")
+
+        st.subheader("Select a playbook")
+        st.markdown("""
+        <p style='margin: 0; line-height: 1.6; font-size: 16px; padding: 10px 0;'>
+                "**Select a playbook to explore detailed behavioral triggers:**"</p>
+        """, unsafe_allow_html=True)
             
     playbook_selection = st.selectbox(
-        "**Select a playbook to explore detailed behavioral triggers:**",
         ["Developer-Led Growth 💻", "Executive Sponsorship 👔", "Multi-Team Expansion 🚀"]
     )
     
