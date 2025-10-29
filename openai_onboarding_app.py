@@ -149,7 +149,9 @@ with tabs[0]:
         </div>
         """, unsafe_allow_html=True)
 
-       
+    
+    st.markdown("---")
+    
     st.subheader("🎯 Key Objectives")
     
     objectives = [
@@ -205,96 +207,9 @@ with tabs[0]:
         
         </div>""", unsafe_allow_html=True)
 
-# ========== ARCHITECTURE TAB ==========
-with tabs[1]:
-    st.header("Lifecycle Architecture")
-
-    st.header("1️⃣ The Timeline")
-
-    horizons_data = {
-    "Horizon 1": {
-        "title": "TIME TO FIRST VALUE",
-        "timeframe": "Days 1-14",
-        "goal": "Get users to their 'aha moment' within 2 weeks",
-        "channels": ["Email welcome series", "In-app onboarding", "Admin dashboard", "ChatGPT Canvas"],
-        "key_metric": "Time to first value: <7 days",
-        "color": "#1F2937"
-    },
-    "Horizon 2": {
-        "title": "HABIT FORMATION & EXPANSION",
-        "timeframe": "Weeks 2-8",
-        "goal": "Drive 3+ days active per week and expand use cases",
-        "channels": ["Behavioral emails", "In-app personalization", "Slack/Teams integration", "Custom GPT recommendations"],
-        "key_metric": "Days active per week: 3+",
-        "color": "#1F2937"
-    },
-    "Horizon 3": {
-        "title": "RETENTION & ADVOCACY",
-        "timeframe": "Week 9+",
-        "goal": "Make ChatGPT indispensable; drive expansion and referrals",
-        "channels": ["Executive emails", "Community content", "Account insights", "Viral loops"],
-        "key_metric": "Logo retention: >95%",
-        "color": "#1F2937"
-    }
-}
-
-    # Display timeline
-    cols = st.columns(3)
-    for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
-        with cols[idx]:
-            st.markdown(f"""
-            <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
-                    color: white; padding: 25px; border-radius: 12px; min-height: 350px;'>
-            <h3 style='margin-top: 0; font-size: 16px; opacity: 0.9;'>{horizon['timeframe']}</h3>
-            <h2 style='margin: 10px 0; font-size: 22px;'>{horizon['title']}</h2>
-            <p style='margin: 15px 0; font-size: 14px;'><strong>Goal:</strong> {horizon['goal']}</p>
-            <p style='margin: 10px 0; font-size: 14px;'><strong>Key Channels:</strong></p>
-            <ul style='font-size: 13px; line-height: 1.6;'>
-                {"".join([f"<li>{channel}</li>" for channel in horizon['channels']])}
-            </ul>
-            <p style='margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); 
-                      font-size: 13px; font-weight: bold;'>
-                📊 {horizon['key_metric']}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    st.markdown("---")
-
-    st.header("2️⃣ Channel Priority Matrix")
-
-    channel_matrix_data = {
-    "By Customer Segment": pd.DataFrame({
-        "Segment": ["Developer-led", "Executive purchase", "Product teams", "Analysts/Researchers", "Creatives"],
-        "Primary Channel": ["In-app + Email", "Email + Admin dashboard", "In-app personalization", "Email tips", "In-app discovery"],
-        "Secondary Channel": ["Slack/Discord integration", "Executive briefings", "Email use case guides", "In-app data tools", "Community content"],
-        "Activation Focus": ["API first call", "Team rollout", "Custom GPT creation", "Advanced Analysis adoption", "DALL-E/Canvas usage"]
-    }),
-    "By Journey Stage": pd.DataFrame({
-        "Stage": ["Onboarding (0-14d)", "Activation (2-8w)", "Retention (9w+)"],
-        "Email": ["🔥 High", "Medium", "🔥 High"],
-        "In-App": ["🔥 High", "🔥 High", "Medium"],
-        "Atlas/Browser": ["Medium", "Medium", "Medium"],
-        "Slack/Integration": ["Low", "🔥 High", "🔥 High"],
-        "Admin Dashboard": ["🔥 High (admins)", "Medium", "🔥 High (admins)"]
-    })
-    }
-
-    # Interactive selector
-    matrix_type = st.radio("View by:", list(channel_matrix_data.keys()), horizontal=True)
-
-    # Display selected matrix
-    st.dataframe(
-    channel_matrix_data[matrix_type],
-    use_container_width=True,
-    hide_index=True
-    )
-
-    st.markdown("---")
-
 # ========== PLAYBOOKS TAB ==========
-with tabs[2]:
-    st.header("Activation Playbooks")
+with tabs[1]:
+    st.header("Segments")
     st.markdown("""
      <p style='margin: 0; line-height: 1.6; padding: 10px 0;'> Primary triggers are behavioral. Time-based fallbacks (marked with ⚠️) 
             only activate when customers do not exhibit expected behaviors, ensuring no one falls through the cracks.
@@ -490,6 +405,166 @@ with tabs[2]:
                 </p>
             </div>
             """, unsafe_allow_html=True)
+
+# ========== ARCHITECTURE TAB ==========
+with tabs[2]:
+    st.header("Lifecycle Architecture")
+
+    st.header("1️⃣ The Timeline")
+
+    horizons_data = {
+    "Horizon 1": {
+        "title": "TIME TO FIRST VALUE",
+        "timeframe": "Days 1-14",
+        "goal": "Get users to their 'aha moment' within 2 weeks",
+        "channels": ["Email welcome series", "In-app onboarding", "Admin dashboard", "ChatGPT Canvas"],
+        "key_metric": "Time to first value: <7 days",
+        "color": "#1F2937"
+    },
+    "Horizon 2": {
+        "title": "HABIT FORMATION & EXPANSION",
+        "timeframe": "Weeks 2-8",
+        "goal": "Drive 3+ days active per week and expand use cases",
+        "channels": ["Behavioral emails", "In-app personalization", "Slack/Teams integration", "Custom GPT recommendations"],
+        "key_metric": "Days active per week: 3+",
+        "color": "#1F2937"
+    },
+    "Horizon 3": {
+        "title": "RETENTION & ADVOCACY",
+        "timeframe": "Week 9+",
+        "goal": "Make ChatGPT indispensable; drive expansion and referrals",
+        "channels": ["Executive emails", "Community content", "Account insights", "Viral loops"],
+        "key_metric": "Logo retention: >95%",
+        "color": "#1F2937"
+    }
+}
+
+    # Display timeline
+    cols = st.columns(3)
+    for idx, (horizon_key, horizon) in enumerate(horizons_data.items()):
+        with cols[idx]:
+            st.markdown(f"""
+            <div style='background: linear-gradient(135deg, {horizon['color']} 0%, {horizon['color']}dd 100%); 
+                    color: white; padding: 25px; border-radius: 12px; min-height: 350px;'>
+            <h3 style='margin-top: 0; font-size: 16px; opacity: 0.9;'>{horizon['timeframe']}</h3>
+            <h2 style='margin: 10px 0; font-size: 22px;'>{horizon['title']}</h2>
+            <p style='margin: 15px 0; font-size: 14px;'><strong>Goal:</strong> {horizon['goal']}</p>
+            <p style='margin: 10px 0; font-size: 14px;'><strong>Key Channels:</strong></p>
+            <ul style='font-size: 13px; line-height: 1.6;'>
+                {"".join([f"<li>{channel}</li>" for channel in horizon['channels']])}
+            </ul>
+            <p style='margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); 
+                      font-size: 13px; font-weight: bold;'>
+                📊 {horizon['key_metric']}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    st.header("2️⃣ Channel Priority Matrix")
+
+    channel_matrix_data = {
+    "By Customer Segment": pd.DataFrame({
+        "Segment": ["Developer-led", "Executive purchase", "Product teams", "Analysts/Researchers", "Creatives"],
+        "Primary Channel": ["In-app + Email", "Email + Admin dashboard", "In-app personalization", "Email tips", "In-app discovery"],
+        "Secondary Channel": ["Slack/Discord integration", "Executive briefings", "Email use case guides", "In-app data tools", "Community content"],
+        "Activation Focus": ["API first call", "Team rollout", "Custom GPT creation", "Advanced Analysis adoption", "DALL-E/Canvas usage"]
+    }),
+    "By Journey Stage": pd.DataFrame({
+        "Stage": ["Onboarding (0-14d)", "Activation (2-8w)", "Retention (9w+)"],
+        "Email": ["🔥 High", "Medium", "🔥 High"],
+        "In-App": ["🔥 High", "🔥 High", "Medium"],
+        "Atlas/Browser": ["Medium", "Medium", "Medium"],
+        "Slack/Integration": ["Low", "🔥 High", "🔥 High"],
+        "Admin Dashboard": ["🔥 High (admins)", "Medium", "🔥 High (admins)"]
+    })
+    }
+
+    # Interactive selector
+    matrix_type = st.radio("View by:", list(channel_matrix_data.keys()), horizontal=True)
+
+    # Display selected matrix
+    st.dataframe(
+    channel_matrix_data[matrix_type],
+    use_container_width=True,
+    hide_index=True
+    )
+
+    st.markdown("---")
+
+    st.header("4️⃣ Data Flow Diagram")
+
+    data_flow_stages = [
+    {
+        "stage": "User Action in ChatGPT",
+        "description": "Message sent, feature used, file uploaded, GPT created",
+        "icon": "📱",
+        "color": "#3b82f6"
+    },
+    {
+        "stage": "Event Capture",
+        "description": "Segment, Google Tag Manager",
+        "icon": "📊",
+        "color": "#8b5cf6"
+    },
+    {
+        "stage": "Data Processing",
+        "description": "Kafka streaming → PostgreSQL warehouse",
+        "icon": "🔄",
+        "color": "#ec4899"
+    },
+    {
+        "stage": "Enrichment & Intelligence",
+        "description": "Clay enrichment + Salesforce CRM data",
+        "icon": "🧠",
+        "color": "#f59e0b"
+    },
+    {
+        "stage": "Decision Engine",
+        "description": "Braze/Iterable logic: Should we message now?",
+        "icon": "⚖️",
+        "color": "#10b981"
+    },
+    {
+        "stage": "Channel Delivery",
+        "description": "Email | In-app | Slack | Admin Dashboard",
+        "icon": "📨",
+        "color": "#6366f1"
+    },
+    {
+        "stage": "Measurement & Loop",
+        "description": "Track response → Update profile → Inform next action",
+        "icon": "📈",
+        "color": "#14b8a6"
+    }
+]
+
+    # Display flow diagram
+    for stage in data_flow_stages:
+        col1, col2 = st.columns([1, 3])
+    
+        with col1:
+            st.markdown(f"""
+            <div style='background: {stage['color']}; color: white; padding: 15px; 
+                    border-radius: 8px; text-align: center; font-size: 32px;'>
+            {stage['icon']}
+            </div>
+            """, unsafe_allow_html=True)
+    
+        with col2:
+            st.markdown(f"""
+            <div style='background: white; padding: 20px; border-radius: 8px; 
+                    border-left: 4px solid {stage['color']}; box-shadow: 0 2px 4px rgba(0,0,0,0.1);'>
+            <strong style='font-size: 18px; color: {stage['color']};'>{stage['stage']}</strong>
+            <p style='margin: 8px 0 0 0; color: #666;'>{stage['description']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+        if stage != data_flow_stages[-1]:
+            st.markdown("<div style='text-align: center; font-size: 32px; color: #4f46e5; margin: 5px 0;'>↓</div>", unsafe_allow_html=True)
+
+st.markdown("---")
 
 # ========== METRICS TAB ==========
 with tabs[3]:
